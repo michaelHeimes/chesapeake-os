@@ -1,0 +1,130 @@
+.featured-reviews {
+	padding-top: 4.5em;
+	padding-bottom: 3.55em;
+	
+	.break {
+		margin-bottom: 4.5em;
+	}
+	
+	.mark {
+		margin-bottom: 1.5em;
+	}
+	
+	h1 {
+		margin-bottom: 0;
+		padding-bottom: 1.5em;
+	}
+	
+	.single-review {
+		margin-bottom: 1.5em;
+		
+		.copy {
+			padding-bottom: 0.6em;
+		}
+		
+		.author {
+			padding-bottom: 0.45em;
+		}
+		
+		a.button {
+			margin-top: 0.85em;
+		}
+		
+	}
+	
+}
+
+.featured-blogs {
+	padding-top: 4.5em;
+	padding-bottom: 3.55em;
+	
+	.break {
+		margin-bottom: 4.5em;
+	}
+	
+	h1 {
+		margin: 0;
+		padding-bottom: 1.4em;
+	}
+
+	a.single-post {
+		display: block;
+		margin-bottom: 1.5em;
+		color: $brand-gray;
+		
+		img {
+			margin-bottom: 1.9em;
+		}
+		
+		h3 {
+			color: $brand-primary;
+		}
+		
+	}
+	
+}
+
+.directions {
+	padding-top: 4.9em;
+	padding-bottom: 3.1em;
+	background-color: $brand-gray;
+	color: $white;
+	
+	iframe {
+		width: 100%;
+		margin-top: 1.95em;
+		margin-bottom: 1.9em;
+	}
+	 
+	.address {
+		.half {
+			margin-bottom: 1.5em;
+		
+			i {
+				font-size: rem-calc(30);
+				margin-bottom: 0.4em;
+			}	
+		
+		}
+		
+	}
+	 
+}
+
+footer.footer {
+	color: $white;
+	background-color: $brand-primary;
+	margin: 0;
+	padding-top: 3.7em;
+	
+	#footer-links {
+		li {
+			a {
+				color: $white;
+			}
+		}
+	}
+	
+	.break {
+		margin-top: 1.85em;
+		margin-bottom: 1.75em;
+	}
+	
+	.footer-logos-wrap {
+		padding-bottom: 1.85em;
+		    
+		img {
+			margin-bottom: 1.2em;
+		}	
+	}
+	
+	.footer-bottom {
+		background: #7f7138;	
+		
+		.grid-x {
+			height: 76px;
+		}
+			
+	}
+	
+}
