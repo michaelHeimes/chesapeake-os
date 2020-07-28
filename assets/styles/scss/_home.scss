@@ -12,7 +12,14 @@
 			display: block;
 			text-transform: uppercase;	
 			color: $brand-gray;
+			font-weight: bold;
 			position: relative;
+			transition: all 0.25s ease;
+			
+		&:hover {
+			background-color: $brand-primary;
+			color: $white;
+		}
 		
 		&:after {
 			content: '';

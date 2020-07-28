@@ -21,6 +21,7 @@
 		padding-bottom: .55em;
 		
 		@include breakpoint(large) {
+			padding-left: 0.8em;
 			padding-bottom: 3.55em;
 		}
 		

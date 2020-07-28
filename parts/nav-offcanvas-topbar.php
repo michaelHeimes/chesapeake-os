@@ -17,7 +17,7 @@
 
 				<ul class="menu align-left left cell shrink">
 					<li><a href ="tel:<?php the_field('contact_phone_number', 'option');?>"><i class="fas fa-phone"></i><?php the_field('contact_phone_number', 'option');?></a></li>
-					<li><a href="mailto:<?php the_field('contact_email_address', 'option');?>"><i class="far fa-envelope"></i>Email</a></li>
+					<li><a class="email-link" href="mailto:<?php the_field('contact_email_address', 'option');?>"><i class="far fa-envelope"></i>Email</a></li>
 				</ul>
 				
 				<ul class="menu right cell shrink">
@@ -79,7 +79,7 @@
 				
 					<ul class="menu align-right">
 						<li><a href ="tel:<?php the_field('contact_phone_number', 'option');?>"><i class="fas fa-phone"></i><?php the_field('contact_phone_number', 'option');?></a></li>
-						<li><a href="mailto:<?php the_field('contact_email_address', 'option');?>"><i class="far fa-envelope"></i><?php the_field('contact_email_address', 'option');?></a></li>
+						<li><a class="email-link" href="mailto:<?php the_field('contact_email_address', 'option');?>"><i class="far fa-envelope"></i><?php the_field('contact_email_address', 'option');?></a></li>
 					</ul>
 				
 				</div>

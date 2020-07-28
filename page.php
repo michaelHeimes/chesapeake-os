@@ -12,7 +12,9 @@ get_header(); ?>
 	
 			<div class="inner-content grid-x grid-margin-x">
 				
-				<div class="content-header cell small-12 large-8 large-offset-4 show-for-large">
+				<div class="lc-mw np cell small-0 large-4"></div>
+				
+				<div class="content-header cell small-12 large-8 show-for-large">
 					
 					<h1><?php the_field('heading');?></h1>
 					
@@ -42,7 +44,7 @@ get_header(); ?>
 							    $link_target = $link['target'] ? $link['target'] : '_self';
 							    ?>
 							    												    
-							    <a class="button cell shrink" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+							    <a class="button hvr-drk cell shrink" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 							<?php endif; ?>
 					
 						<?php endwhile;?>

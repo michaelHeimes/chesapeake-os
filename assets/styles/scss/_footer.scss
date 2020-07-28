@@ -151,6 +151,11 @@ footer.footer {
 				padding-top: .32rem;
 				padding-bottom: .32rem;
 				color: $white;
+				
+			&:hover {
+				text-decoration: underline;
+			}
+				
 			}
 		}
 	}

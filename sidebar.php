@@ -4,7 +4,7 @@
  */
  ?>
 
-<div id="sidebar1" class="sidebar small-12 large-4 cell" role="complementary">
+<div id="sidebar1" class="sidebar lc-mw np small-12 large-4 cell" role="complementary">
 
 	<?php if(is_page_template('page-templates/page-template-home.php')):?>
 

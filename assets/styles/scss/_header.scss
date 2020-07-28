@@ -5,6 +5,10 @@ header.header {
 		flex-direction: column;
 		align-items: stretch;
 		
+		a.email-link:hover {
+			text-decoration: underline;
+		}
+		
 		.mobile-header {
 			a {
 				color: $white;
@@ -275,12 +279,6 @@ header.header {
 			.left {
 				background: $brand-gray;
 				color: $white;
-				padding: 1.8em 0em;
-				
-				@include breakpoint(large) {
-					max-width: 389px;
-					padding: 6.1em 3em;
-				}
 				
 				h1 {
 					max-width: 440px;
@@ -326,8 +324,6 @@ header.header {
 	
 }
 
-
-
 .off-canvas {
 	display: none;
 	border-top: 4px solid $brand-primary;
@@ -337,8 +333,10 @@ header.header {
     height: 100vh;
     
     .inner {
+/*
 	    max-width: 336px;
 	    margin: auto;
+*/
 	    
 	    .off-canvas-header {
 		    border-bottom: 1px solid #999999;
@@ -360,7 +358,8 @@ header.header {
 			    
 			    a {
 				    color: $white;
-				    padding: 1em 0;				    
+				    padding: 1em 0;
+				    transition: color 0.3s ease;				    
 			    }
 			    
 			    &.is-accordion-submenu-parent {
@@ -418,6 +417,51 @@ header.header {
 				color: $brand-gray;
 			}
 			
+		}
+		
+		form {
+			padding-top: 1.5em;
+			height: 67px;
+		    width: 100%;
+			display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    
+		    input[type="text"] {
+			    background: $brand-gray;
+			    color: $white;
+			    max-width: none;
+			    flex: 1 1 100%;
+			    width: 100%;
+			    margin: 0;
+			    padding-left: 0;
+			    border: 0;
+			    border-bottom: 1px solid $brand-primary;
+			    box-shadow: 0 0 0;
+			    
+			    &::placeholder {
+				    color: $white;
+			    }
+			    
+			}
+			
+			button {
+				height: 39px;
+				padding: 0 0.5em;
+			    border-bottom: 1px solid $brand-primary;
+			    
+			    i {
+				    color: $brand-primary;
+				    
+			    &.fal.fa-times {
+				    margin-right: -0.3em;
+				    font-size: 30px;
+			    }
+			    
+			    }
+			    
+			}
+		    
 		}
 		
 	}

@@ -31,6 +31,10 @@
 	    <?php } ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		
+		<?php if($head_snippets = get_field('tracking_code_placed_after_opening_head', 'option')):
+			echo $head_snippets;
+		endif;?>
 
 		<?php wp_head(); ?>
 
@@ -61,7 +65,7 @@
 							<div class="grid-container">
 								<div class="col-rev grid-x grid-padding-x">
 								
-									<div class="left cell small-12 large-auto">
+									<div class="left lc-mw cell small-12 large-auto">
 										<?php if($heading = get_field('banner_heading')):?>
 											<h1 class="text-center"><?php echo $heading;?></h1>
 										<?php endif;?>

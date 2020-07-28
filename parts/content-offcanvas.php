@@ -8,7 +8,7 @@
 
 <div class="off-canvas" id="off-canvas">
 	
-	<div class="inner">
+	<div class="inner grid-container">
 	
 		<div class="off-canvas-header text-right">
 			
@@ -23,7 +23,14 @@
 			<?php dynamic_sidebar( 'offcanvas' ); ?>
 	
 		<?php endif; ?>
-	
+		
+		
+		<form method="get" action="/">
+			<input type="text" name="s" placeholder="Enter search terms here" class="">
+			<input type="hidden" name="post_type" value="post">
+			<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+		</form>
+			
 	</div>
 	
 </div>
