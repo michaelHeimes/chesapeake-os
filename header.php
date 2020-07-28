@@ -39,7 +39,6 @@
 	<body <?php body_class(); ?>>
 
 		<div class="off-canvas-wrapper">
-			
 			<!-- Load off-canvas container. Feel free to remove if not using. -->			
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 			
@@ -60,9 +59,9 @@
 		
 						<div class="banner cell small-12">
 							<div class="grid-container">
-								<div class="grid-x grid-padding-x">
+								<div class="col-rev grid-x grid-padding-x">
 								
-									<div class="left cell small-12 medium-auto">
+									<div class="left cell small-12 large-auto">
 										<?php if($heading = get_field('banner_heading')):?>
 											<h1 class="text-center"><?php echo $heading;?></h1>
 										<?php endif;?>
@@ -75,7 +74,7 @@
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
 										    
-										    <div class="break"></div>
+										    <div class="break show-for-large"></div>
 										    
 										    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
@@ -84,6 +83,55 @@
 	
 									<?php
 										$imgID = get_field('banner_image');
+										$imgSize = "banner";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									
+									?>
+									
+									<div class="right cell small-12 large-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );">
+										
+									</div>
+								
+								</div>
+							</div>
+						</div>
+			
+					</div>
+				</div>
+				
+				<?php endif;?>
+				
+				<?php if(is_home()):?>
+
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x">
+		
+						<div class="banner cell small-12">
+							<div class="grid-container">
+								<div class="col-rev grid-x grid-padding-x">
+								
+									<div class="left cell small-12 medium-auto">
+										<?php if($heading = get_field('banner_heading', 'option')):?>
+											<h1 class="text-center"><?php echo $heading;?></h1>
+										<?php endif;?>
+										
+										<?php 
+										$link = get_field('banner_cta_link', 'option');
+										if( $link ): 
+										    $link_url = $link['url'];
+										    $link_title = $link['title'];
+										    $link_target = $link['target'] ? $link['target'] : '_self';
+										    ?>
+										    
+										    <div class="break show-for-large"></div>
+										    
+										    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										<?php endif; ?>
+																			
+									</div>
+	
+									<?php
+										$imgID = get_field('banner_image', 'option');
 										$imgSize = "banner";
 										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
 									

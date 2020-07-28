@@ -17,7 +17,7 @@ get_header(); ?>
 						<div class="grid-x grid-margin-x">
 							<div class="cell small-12">
 								<div class="inner">
-									<div class="grid-x grid-margin-x grid-padding-x small-up-2 medium-up-4">
+									<div class="grid-x grid-margin-x grid-padding-x small-up-1 large-up-4">
 								
 										<?php 
 										$link = get_field('tn_link_1');
@@ -26,7 +26,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="cell" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										    <a class="cell text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
 				
 										<?php 
@@ -36,7 +36,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="cell" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										    <a class="cell text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
 										
 										<?php 
@@ -46,7 +46,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="cell" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										    <a class="cell text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
 										
 										<?php 
@@ -56,7 +56,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="cell" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										    <a class="cell text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
 								
 									</div>
@@ -140,14 +140,23 @@ get_header(); ?>
 								<?php 
 								$image = get_field('about_full_width_image');
 								if( !empty( $image ) ): ?>
-								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								    <img class="about-fw-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 								<?php endif; ?>
 								
 								<div class="content-wrap grid-x grid-margin-x grid-margin-x">
 									
-									<?php get_sidebar(); ?>
+									<div class="content-header cell small-12 large-8 large-offset-4 show-for-large">
+		
+										<h1><?php the_field('about_heading');?></h1>
+										
+										<h2><?php the_field('about_sub-heading');?></h2>
+										
+									</div>
 									
+									<?php get_sidebar(); ?>
+																													
 									<div class="copy-wrap cell auto">
+										
 										<?php the_field('about_bio_copy');?>	
 										
 										<?php if( have_rows('about_about_ctas') ):?>

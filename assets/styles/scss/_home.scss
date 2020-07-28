@@ -7,8 +7,8 @@
 		}
 		
 		a {
-			padding-top: 1.45em;
-			padding-bottom: 1.45em;
+			padding-top: 1.25em;
+			padding-bottom: 1.25em;
 			display: block;
 			text-transform: uppercase;	
 			color: $brand-gray;
@@ -17,11 +17,23 @@
 		&:after {
 			content: '';
 			position: absolute;
-			top: 0;
+			top: auto;
+			left: 0;
 			right: 0;
 			bottom: 0;
-			width: 1px;
+			height: 1px;
+			width: 100%;
 			background-color: $brand-primary;	
+			
+		@include breakpoint(large) {
+			top: 0;
+			left: auto;
+			right: 0;
+			bottom: 0;
+			height: 100%;
+			width: 1px;
+		}
+			
 		}
 		
 		&:last-child:after {
@@ -41,8 +53,11 @@
 		}
 		
 		.logos-wrap {
-			padding-top: 2.8em;
 			padding-bottom: 0.85em;
+			
+			@include breakpoint(large) {
+				padding-top: 2.8em;
+			}
 			
 			.single-logo {
 				max-width: 255px;
@@ -66,10 +81,34 @@
 	
 	.about {
 		padding-top: 3.7em;
-		padding-bottom: 3.55em;
+		
+		@include breakpoint(large) {
+			padding-bottom: 3.55em;
+		}
+		
+		img.about-fw-img {
+			display: block;
+			margin: auto;
+		}
 		
 		.sidebar {
 			margin-bottom: 2em;
+			
+			@include breakpoint(large) {
+				margin-bottom: 0;
+			}
+			
+			img {
+				border-radius: 100%;
+				display: block;
+				margin: 0 auto 1.5em;
+				
+				@include breakpoint(large) {
+					margin: auto;
+				}
+				
+			}
+			
 		}
 		
 		.content-wrap {
@@ -79,6 +118,12 @@
 		
 				.buttons-wrap {
 					padding-top: 1.15em;
+					justify-content: center;
+					
+					@include breakpoint(mobile) {
+						justify-content: flex-start;
+					}
+					
 				}
 		
 			}

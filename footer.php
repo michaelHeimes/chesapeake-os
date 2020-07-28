@@ -8,6 +8,7 @@
  */			
  ?>
 
+ 		<?php if(!is_page_template('page-templates/page-template-contact.php')):?>
  			<?php if( get_field('show_reviews') == 'true' ):?>
  				<section class="featured-reviews">
 	 				<div class="grid-container">
@@ -17,13 +18,51 @@
 								
 								<div class="break gray"></div>
 								
-								<img class="mark" src="wp-content/themes/cos/assets/images/mark.svg"/>
+								<img class="mark" src="/wp-content/themes/cos/assets/images/mark.svg"/>
 								
 								<h2 class="standard"><?php the_field('fr_sub-heading', 'option');?></h2>
 								<h1 class="standard"><?php the_field('fr_heading', 'option');?></h1>
 								
 							</div>
 				
+							<?php 				
+							$args = array(  
+						        'post_type' => 'review',
+						        'post_status' => 'publish',
+						        'posts_per_page' => 1, 
+						        'order' => 'DESC',
+					            'meta_query' => array(
+							        array(
+							            'key'   => 'featured',
+							            'value' => '1',
+							        )
+								)
+						    );
+						
+						    $loop = new WP_Query( $args ); 
+						        
+						    while ( $loop->have_posts() ) : $loop->the_post();?>
+			
+							<div class="single-review cell small-12 hide-for-large text-center">
+								
+								<div class="copy"><?php the_content();?></div>
+								
+								<div class="author text-center"><?php the_field('authors_name');?></div>
+
+								<div class="stars text-center">
+									<?php if( get_field('star_count') == 'five' ):?>
+										<img src="/wp-content/themes/cos/assets/images/stars-5.svg"/>
+									<?php endif;?>
+								</div>
+
+								
+							</div>
+			
+						    <?php endwhile;
+						
+						    wp_reset_postdata(); 
+						    ?>
+
 							<?php 				
 							$args = array(  
 						        'post_type' => 'review',
@@ -42,15 +81,15 @@
 						        
 						    while ( $loop->have_posts() ) : $loop->the_post();?>
 			
-							<div class="single-review cell small-12 medium-4">
+							<div class="single-review cell small-12 medium-4 show-for-large text-center">
 								
 								<div class="copy"><?php the_content();?></div>
 								
-								<div class="author text-center"><?php the_field('authors_name');?></div>
+								<div class="author"><?php the_field('authors_name');?></div>
 
 								<div class="stars text-center">
 									<?php if( get_field('star_count') == 'five' ):?>
-										<img src="wp-content/themes/cos/assets/images/stars-5.svg"/>
+										<img src="/wp-content/themes/cos/assets/images/stars-5.svg"/>
 									<?php endif;?>
 								</div>
 
@@ -79,7 +118,7 @@
 				</section>
 			<?php endif;?>
 
-			<?php if( get_field('show_reviews') == 'true' ):?>
+			<?php if( get_field('show_latest_blog_posts') == 'true' ):?>
 				<section class="featured-blogs">
 					<div class="grid-container">
 						<div class="grid-x grid-margin-x grid-margin-x">
@@ -93,35 +132,41 @@
 								
 							</div>
 				
-							<?php 				
-							$args = array(  
-						        'post_type' => 'post',
-						        'post_status' => 'publish',
-						        'posts_per_page' => 3, 
-						        'order' => 'DESC',
-						    );
-						
-						    $loop = new WP_Query( $args ); 
-						        
-						    while ( $loop->have_posts() ) : $loop->the_post();?>
-			
-							<a href="<?php echo get_permalink();?>" class="single-post cell small-12 medium-4">
-																
-								<?php echo get_the_post_thumbnail( $post_id, 'thumbnail');?>
-								
-								<h3><?php the_title();?></h3>
-								
-								<div class="copy"><?php the_excerpt();?></div>
-								
-
-
-								
-							</a>
-			
-						    <?php endwhile;
-						
-						    wp_reset_postdata(); 
-						    ?>
+							<div class="cell small-12">
+								<div class="blog-posts-wrap grid-x grid-padding-x">
+									
+								<?php 				
+								$args = array(  
+							        'post_type' => 'post',
+							        'post_status' => 'publish',
+							        'posts_per_page' => 3, 
+							        'order' => 'DESC',
+							    );
+							
+							    $loop = new WP_Query( $args ); 
+							        
+							    while ( $loop->have_posts() ) : $loop->the_post();?>
+				
+								<a href="<?php echo get_permalink();?>" class="single-post cell small-12 large-4">
+																	
+									<?php echo get_the_post_thumbnail( $post_id, 'thumbnail');?>
+									
+									<h3><?php the_title();?></h3>
+									
+									<div class="copy"><?php the_excerpt();?></div>
+									
+	
+	
+									
+								</a>
+				
+							    <?php endwhile;
+							
+							    wp_reset_postdata(); 
+							    ?>
+						    
+								</div>
+							</div>
 						    	 				
 						</div>
 					</div>
@@ -139,7 +184,7 @@
 								
 							</div>
 							
-							<div class="half small-12 medium-6 cell"> 	
+							<div class="half small-12 large-6 cell"> 	
 								
 								<?php the_field('green_spring_station_map_embed', 'option');?>			
 
@@ -150,7 +195,7 @@
 	 				
 							</div>
 
-							<div class="half small-12 medium-6 cell"> 	
+							<div class="half small-12 large-6 cell"> 	
 								
 								<?php the_field('swan_creek_map_embed', 'option');?>			
 
@@ -165,11 +210,13 @@
 	 				</div>
  				</section>
 					
+		<?php endif;?>
+					
 				<footer class="footer" role="contentinfo">
 					
 					<div class="grid-container">
 					
-						<div class="inner-footer grid-x grid-margin-x grid-padding-x">
+						<div class="inner-footer grid-x grid-margin-x">
 							
 							<div class="small-12 medium-12 large-12 cell">
 								<nav role="navigation">
@@ -181,7 +228,7 @@
 			    				
 			    				<div class="break"></div>
 			    				
-			    				<div class="footer-logos-wrap grid-x grid-margin-x grid-padding-x align-center align-top">
+			    				<div class="footer-logos-wrap grid-x grid-margin-x align-center align-top">
 			    				<?php if( have_rows('footer_logos', 'option') ):?>
 			    					<?php while ( have_rows('footer_logos', 'option') ) : the_row();?>	
 										<?php 
@@ -201,9 +248,21 @@
 					
 					<div class="footer-bottom">
 						<div class="grid-container">
-							<div class="grid-x grid-margin-x grid-padding-x align-middle">
+							<div class="grid-x grid-margin-x align-middle">
 								<div class="small-12 medium-12 large-12 cell">
-									<div class="source-org copyright"><?php the_field('footer_copyright', 'option');?></div>
+									
+									<div class="inner grid-x grid-margin-x grid-padding-x align-middle">
+										
+										<div class="source-org copyright cell small-12 mobile-shrink"><?php the_field('footer_copyright', 'option');?></div>
+										
+										<div class="social-links cell small-12 mobile-shrink">
+											<a href="<?php the_field('facebook_url');?>"><i class="fab fa-facebook-square"></i></a>
+											<a href="<?php the_field('youtube_url');?>"><i class="fab fa-youtube"></i></a>
+											<a href="<?php the_field('yelp_url');?>"><i class="fab fa-yelp"></i></a>
+										</div>
+										
+									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -219,7 +278,7 @@
 		
 		<?php wp_footer(); ?>
 		
-<!-- 		<script type="text/javascript">var _userway_config={account:'VkTXh5ZAya'};</script> <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script> -->
+		<script type="text/javascript">var _userway_config={account:'VkTXh5ZAya'};</script> <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
 
 	</body>
 	

@@ -7,10 +7,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 						
 	<header class="article-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
+		<h1 class="page-title show-for-sr"><?php the_title(); ?></h1>
 	</header> <!-- end article header -->
 					
-    <section class="entry-content" itemprop="text">
+    <section class="entry-content copy-wrap" itemprop="text">
 	    <?php the_content(); ?>
 	</section> <!-- end article section -->
 						

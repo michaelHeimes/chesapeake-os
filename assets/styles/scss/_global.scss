@@ -11,24 +11,74 @@ body {
 }
 
 h1.standard {
-	font-size: rem-calc(28px);
+	font-size: rem-calc(18px);
+	
+	@include breakpoint(large) {
+		font-size: rem-calc(28px);
+	}
+	
 }
 
 h2.standard {
-	font-size: rem-calc(38px);
+	font-size: rem-calc(20px);
+	
+	@include breakpoint(large) {
+		font-size: rem-calc(38px);
+	}
+	
+}
+
+p {
+	margin: 0;
+	padding-top: 0.9em;
+	padding-bottom: 0.9em;
 }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+iframe {
+	border: 0;
+}
+
+.content-row {
+	padding-top: 3.9em;
+	
+	h3 {
+		margin: 0;
+		padding-bottom: 0.2em;
+	}
+	
+}
+
+.content-header {
+	padding-bottom: 0;
+	
+	h1 {
+		margin: 0;
+		padding-bottom: 0.15em;
+	}
+	
+/*
+	@include breakpoint(large) {
+		padding-bottom: 3.75em;
+	}
+*/
+}
+
 .copy-wrap {
 	a {
 		text-decoration: underline;	
 	}
 }
 
+button {
+	cursor: pointer;
+}
+
 a.button,
 .button {
+	cursor: pointer;
 	font-size: rem-calc(14);
 	font-weight: bold;
 	text-transform: uppercase;

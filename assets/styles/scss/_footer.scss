@@ -1,9 +1,21 @@
 .featured-reviews {
-	padding-top: 4.5em;
-	padding-bottom: 3.55em;
+	padding-top: 3em;
+	
+	@include breakpoint(large) {
+		padding-bottom: 3.55em;
+	}
+	
+	@include breakpoint(large) {
+		padding-top: 4.5em;
+	}
 	
 	.break {
-		margin-bottom: 4.5em;
+		margin-bottom: 3.5em;
+		
+		@include breakpoint(large) {
+			margin-bottom: 4.5em;
+		}
+		
 	}
 	
 	.mark {
@@ -35,58 +47,92 @@
 }
 
 .featured-blogs {
-	padding-top: 4.5em;
-	padding-bottom: 3.55em;
+	padding-top: 3em;
+	padding-bottom: 2.55em;
+	
+	@include breakpoint(large) {
+		padding-top: 4.5em;
+		padding-bottom: 3.55em;
+	}
 	
 	.break {
-		margin-bottom: 4.5em;
+		margin-bottom: 3.5em;
+		
+		@include breakpoint(large) {
+			margin-bottom: 4.5em;
+		}
 	}
 	
 	h1 {
 		margin: 0;
 		padding-bottom: 1.4em;
 	}
+	
+	.blog-posts-wrap {
+		max-width: 381px;
+		margin: auto;
+		
+		@include breakpoint(large) {
+			max-width: none;	
+		}
+			
+		a.single-post {
 
-	a.single-post {
-		display: block;
-		margin-bottom: 1.5em;
-		color: $brand-gray;
-		
-		img {
-			margin-bottom: 1.9em;
+			display: block;
+			margin: 0 auto 1.5em;
+			color: $brand-gray;
+			
+			img {
+				margin-bottom: 1.9em;
+			}
+			
+			h3 {
+				color: $brand-primary;
+			}
+			
 		}
-		
-		h3 {
-			color: $brand-primary;
-		}
-		
+	
 	}
 	
 }
 
 .directions {
-	padding-top: 4.9em;
+	padding-top: 3em;
 	padding-bottom: 3.1em;
 	background-color: $brand-gray;
 	color: $white;
 	
-	iframe {
-		width: 100%;
-		margin-top: 1.95em;
-		margin-bottom: 1.9em;
+	@include breakpoint(large) {
+		padding-top: 4.9em;
 	}
-	 
-	.address {
-		.half {
-			margin-bottom: 1.5em;
+	
+	.grid-x {
+		max-width: 381px;
+		margin: auto;
 		
-			i {
-				font-size: rem-calc(30);
-				margin-bottom: 0.4em;
-			}	
-		
+		@include breakpoint(large) {
+			max-width: none;	
 		}
-		
+	
+		iframe {
+			width: 100%;
+			margin-top: 1.95em;
+			margin-bottom: 1.9em;
+		}
+		 
+		.address {
+			.half {
+				margin-bottom: 1.5em;
+			
+				i {
+					font-size: rem-calc(30);
+					margin-bottom: 0.4em;
+				}	
+			
+			}
+			
+		}
+	
 	}
 	 
 }
@@ -98,19 +144,25 @@ footer.footer {
 	padding-top: 3.7em;
 	
 	#footer-links {
+		justify-content: center;
+		
 		li {
 			a {
+				padding-top: .32rem;
+				padding-bottom: .32rem;
 				color: $white;
 			}
 		}
 	}
 	
 	.break {
+		border-color: $brand-primary-hover;
 		margin-top: 1.85em;
 		margin-bottom: 1.75em;
 	}
 	
 	.footer-logos-wrap {
+		padding-top: 1.4em;
 		padding-bottom: 1.85em;
 		    
 		img {
@@ -122,7 +174,42 @@ footer.footer {
 		background: #7f7138;	
 		
 		.grid-x {
-			height: 76px;
+			height: 177px;
+			align-content: center;
+			
+			@include breakpoint(mobile) {
+				height: 76px;
+			}
+		}
+		
+		.inner {
+		    justify-content: space-between;
+		    
+		    .source-org {
+			    text-align: center;
+			    font-size: rem-calc(15);
+			    padding-bottom: 1em;
+			    
+			    @include breakpoint(mobile) {
+				    padding-bottom: 0;
+			    }
+			    
+			    @include breakpoint(large) {
+				    font-size: rem-calc(18);
+			    }
+			    
+		    }
+		    
+		    .social-links {
+			    text-align: center;
+			    
+			    a {
+				    color: $white;
+				    font-size: rem-calc(30);
+				    margin-left: 0.4em;
+			    }
+		    }
+		    
 		}
 			
 	}

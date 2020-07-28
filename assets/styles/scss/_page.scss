@@ -1,0 +1,37 @@
+.page-template-default {
+	
+	.sidebar {
+		img {
+			display: block;
+			margin: 0 auto 1.5em;
+			
+			@include breakpoint(large) {
+				margin: auto;
+			}
+			
+		&.round {
+			border-radius: 100%;
+		}
+		
+		}
+	}
+	
+	.inner-content {
+		padding-top: 3.7em;
+		padding-bottom: .55em;
+		
+		@include breakpoint(large) {
+			padding-bottom: 3.55em;
+		}
+		
+		.copy-wrap {
+
+		}
+		
+		.buttons-wrap {
+		    padding-top: 1.15em;
+		}
+		
+	}
+	
+}

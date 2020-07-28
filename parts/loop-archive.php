@@ -6,20 +6,28 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">					
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">	
+	<div class="grid-x grid-padding-x">	
 	
-	<header class="article-header">
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-		<?php get_template_part( 'parts/content', 'byline' ); ?>
-	</header> <!-- end article header -->
-					
-	<section class="entry-content" itemprop="text">
-		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-		<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
-	</section> <!-- end article section -->
-						
-	<footer class="article-footer">
-    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointswp') . '</span> ', ', ', ''); ?></p>
-	</footer> <!-- end article footer -->	
-				    						
+		<div class="left cell small-12 medium-4">
+			<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
+		</div>			
+		
+		<div class="right cell small-12 medium-8">
+			
+			<header class="article-header">
+				<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+			</header> <!-- end article header -->
+							
+			<section class="entry-content" itemprop="text">
+				<?php the_excerpt() ?>
+			</section> <!-- end article section -->
+								
+			<footer class="article-footer">
+		    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointswp') . '</span> ', ', ', ''); ?></p>
+			</footer> <!-- end article footer -->	
+		
+		</div>
+		
+	</div>		    						
 </article> <!-- end article -->

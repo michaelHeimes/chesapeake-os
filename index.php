@@ -9,11 +9,19 @@
 
 get_header(); ?>
 			
-	<div class="content">
+	<div class="content content-row">
 	
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="inner-content grid-x grid-padding-x">
+			
+			<div class="content-header cell small-12 medium-8 medium-offset-4">
+				
+				<h1><?php the_field('heading', 'option');?></h1>
+				
+				<h2><?php the_field('sub-heading', 'option');?></h2>
+				
+			</div>
 	
-		    <main class="main small-12 medium-8 large-8 cell" role="main">
+		    <main class="main small-12 cell" role="main">
 		    
 			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			 
@@ -32,10 +40,8 @@ get_header(); ?>
 																								
 		    </main> <!-- end #main -->
 		    
-		    <?php get_sidebar(); ?>
-
 		</div> <!-- end #inner-content -->
 
 	</div> <!-- end #content -->
-
+	
 <?php get_footer(); ?>

@@ -10,8 +10,8 @@
 			'total' => $wp_query->max_num_pages,
 			'mid_size' => 5,
 			'prev_next' => true,
-		    'prev_text' => __( '&laquo;', 'jointswp' ),
-		    'next_text' => __( '&raquo;', 'jointswp' ),
+		    'prev_text' => __( '<i class="fal fa-arrow-left"></i>', 'jointswp' ),
+		    'next_text' => __( '<i class="fal fa-arrow-right"></i>', 'jointswp' ),
 			'type' => 'list',
 		) );
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );
@@ -22,6 +22,7 @@
 		$paginate_links = preg_replace( '/\s*page-numbers/', '', $paginate_links );
 		// Display the pagination if more than one page is found.
 		if ( $paginate_links ) {
+			echo '<div class="break gray"></div>';
 			echo '<div class="page-navigation">';
 			echo $paginate_links;
 			echo '</div><!--// end .pagination -->';
