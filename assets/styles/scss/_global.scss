@@ -63,6 +63,26 @@ p {
 */
 }
 
+ul:not(.menu):not(.pagination) {
+	list-style: none;
+	margin-left: 1.75em;
+	
+	li {
+		position: relative;
+		padding-bottom: 0.35em;
+		
+		&:before {
+			content: "\f054";
+			font-family: "Font Awesome 5 Pro";
+			font-size: rem-calc(13);
+			position: absolute;
+			left: -.75em;
+			top: 0.34em;
+		}
+		
+	}
+}
+
 .copy-wrap {
 	a {
 		text-decoration: underline;	
@@ -74,6 +94,7 @@ p {
 		
 	}
 	
+/*
 	ul {
 		list-style: none;
 		margin-left: 1.75em;
@@ -93,6 +114,7 @@ p {
 			
 		}
 	}
+*/
 			
 }
 
@@ -102,6 +124,25 @@ a.button.hvr-drk,
 	&:hover {
 		color: $white !important;
 		background-color: $brand-gray;	
+	}
+	
+}
+
+.blog,
+.archive {
+	
+	.break.gray {
+		margin-top: 4.5em;
+	}
+	
+	.page-navigation {
+		margin-top: 0.4em;
+	    padding-bottom: 4.1em;
+	
+		ul.pagination {
+			text-align: right;
+		}
+		
 	}
 	
 }
@@ -129,6 +170,7 @@ button {
 	cursor: pointer;
 }
 
+input.wpcf7-form-control.wpcf7-submit,
 a.button,
 .button {
 	cursor: pointer;
@@ -140,6 +182,9 @@ a.button,
 	line-height: 1.33333;
 	padding: 0.8612em 1.32em;
 	text-decoration: none !important;
+	background-color: $brand-primary;
+	color: $white;
+	border: 1px solid transparent;
 }
 
 .break {

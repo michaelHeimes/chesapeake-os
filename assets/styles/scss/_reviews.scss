@@ -1,0 +1,93 @@
+.archive.post-type-archive.post-type-archive-review {
+	
+	.content-header {
+		padding-bottom: 3.3em;
+		
+		button {
+			margin-top: 1.9em;
+		}
+		
+	}
+	
+	.form-wrap {
+		
+		form {
+			
+			p{
+				margin: 0;
+				padding: 0;
+			}
+			
+			div.rating-wrap {
+				display: flex;
+				align-items: center;
+				
+				.wpcf7-list-item {
+					position: relative;
+					margin-left: 0.6em;
+					
+					&:after {
+						content: "\f005";
+						font-family: "Font Awesome 5 Pro";
+						color: $brand-primary;
+						font-size: rem-calc(18);
+						position: absolute;
+						left: -.2em;
+						top: 0em;
+					}
+					
+				&.clicked:after {
+					font-weight: bold;
+				}
+					
+					input {
+						cursor: pointer;
+						position: relative;
+						z-index: 1;
+						opacity: 0;
+						margin: 0;					
+					}
+					
+					span.wpcf7-list-item-label {
+						clip: rect(1px, 1px, 1px, 1px);
+						clip-path: inset(50%);
+						height: 1px;
+						width: 1px;
+						margin: -1px;
+						overflow: hidden;
+						padding: 0;
+						position: absolute;
+					}
+					
+				}
+				
+			}
+		
+			.wpcf7 form.sent .wpcf7-response-output {
+				border-color: $brand-primary;
+			}
+			
+		}
+		
+	}
+	
+	.single-review {
+		padding-bottom: 0.6em;
+		
+		.stars {
+			padding-bottom: 0.55em;
+			
+			i {
+				color: $brand-primary;
+				margin-right: 0.35em;
+			}
+		}
+		
+		.date,
+		.author {
+			font-weight: bold;
+		}
+		
+	}
+	
+}

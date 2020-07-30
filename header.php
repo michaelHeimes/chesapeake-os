@@ -56,7 +56,7 @@
 	 	
 				</header> <!-- end .header -->
 				
-				<?php if(is_page()):?>
+				<?php if(is_page() || is_home() || is_archive()):?>
 
 				<div class="grid-container">
 					<div class="grid-x grid-padding-x">
@@ -66,84 +66,111 @@
 								<div class="col-rev grid-x grid-padding-x">
 								
 									<div class="left lc-mw cell small-12 large-auto">
-										<?php if($heading = get_field('banner_heading')):?>
-											<h1 class="text-center"><?php echo $heading;?></h1>
+										
+										<?php if(is_page()):?>
+											
+											<?php if($heading = get_field('banner_heading')):?>
+												<h1 class="text-center"><?php echo $heading;?></h1>
+											<?php endif;?>
+											
+											<?php 
+											$link = get_field('banner_cta_link');
+											if( $link ): 
+											    $link_url = $link['url'];
+											    $link_title = $link['title'];
+											    $link_target = $link['target'] ? $link['target'] : '_self';
+											    ?>
+											    
+											    <div class="break show-for-large"></div>
+											    
+											    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<?php endif; ?>
+												
 										<?php endif;?>
 										
-										<?php 
-										$link = get_field('banner_cta_link');
-										if( $link ): 
-										    $link_url = $link['url'];
-										    $link_title = $link['title'];
-										    $link_target = $link['target'] ? $link['target'] : '_self';
-										    ?>
-										    
-										    <div class="break show-for-large"></div>
-										    
-										    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										<?php endif; ?>
-																			
-									</div>
+										<?php if(is_home()):?>
 	
-									<?php
-										$imgID = get_field('banner_image');
-										$imgSize = "banner";
-										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
-									
-									?>
-									
-									<div class="right cell small-12 large-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );">
-										
-									</div>
-								
-								</div>
-							</div>
-						</div>
-			
-					</div>
-				</div>
-				
-				<?php endif;?>
-				
-				<?php if(is_home()):?>
+											<?php if($heading = get_field('banner_heading', 'option')):?>
+												<h1 class="text-center"><?php echo $heading;?></h1>
+											<?php endif;?>
+											
+											<?php 
+											$link = get_field('banner_cta_link', 'option');
+											if( $link ): 
+											    $link_url = $link['url'];
+											    $link_title = $link['title'];
+											    $link_target = $link['target'] ? $link['target'] : '_self';
+											    ?>
+											    
+											    <div class="break show-for-large"></div>
+											    
+											    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<?php endif; ?>
+											
+										<?php endif;?>
 
-				<div class="grid-container">
-					<div class="grid-x grid-padding-x">
-		
-						<div class="banner cell small-12">
-							<div class="grid-container">
-								<div class="col-rev grid-x grid-padding-x">
-								
-									<div class="left cell small-12 medium-auto">
-										<?php if($heading = get_field('banner_heading', 'option')):?>
-											<h1 class="text-center"><?php echo $heading;?></h1>
-										<?php endif;?>
-										
-										<?php 
-										$link = get_field('banner_cta_link', 'option');
-										if( $link ): 
-										    $link_url = $link['url'];
-										    $link_title = $link['title'];
-										    $link_target = $link['target'] ? $link['target'] : '_self';
-										    ?>
-										    
-										    <div class="break show-for-large"></div>
-										    
-										    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										<?php endif; ?>
-																			
-									</div>
+										<?php if(is_archive()):?>
 	
-									<?php
-										$imgID = get_field('banner_image', 'option');
-										$imgSize = "banner";
-										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+											<?php if($heading = get_field('reviews_banner_heading', 'option')):?>
+												<h1 class="text-center"><?php echo $heading;?></h1>
+											<?php endif;?>
+											
+											<?php 
+											$link = get_field('reviews_banner_cta_link', 'option');
+											if( $link ): 
+											    $link_url = $link['url'];
+											    $link_title = $link['title'];
+											    $link_target = $link['target'] ? $link['target'] : '_self';
+											    ?>
+											    
+											    <div class="break show-for-large"></div>
+											    
+											    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<?php endif; ?>
+											
+										<?php endif;?>
 									
-									?>
-									
-									<div class="right cell small-12 medium-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );">
-										
 									</div>
+																														
+									
+									<?php if(is_page()):?>	
+			
+										<?php
+											$imgID = get_field('banner_image');
+											$imgSize = "banner";
+											$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+										
+										?>
+										
+										<div class="right cell small-12 large-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
+												
+									<?php endif;?>
+										
+																			
+									<?php if(is_home()):?>
+										<?php
+											$imgID = get_field('banner_image', 'option');
+											$imgSize = "banner";
+											$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+										
+										?>
+									
+										<div class="right cell small-12 medium-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
+										
+									<?php endif;?>
+									
+
+									<?php if(is_archive()):?>
+										<?php
+											$imgID = get_field('reviews_banner_image', 'option');
+											$imgSize = "banner";
+											$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+										
+										?>
+									
+										<div class="right cell small-12 medium-auto" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
+										
+									<?php endif;?>
 								
 								</div>
 							</div>

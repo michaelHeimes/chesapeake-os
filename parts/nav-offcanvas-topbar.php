@@ -96,7 +96,7 @@
 				
 				<form method="get" action="/">
 					<input type="text" name="s" placeholder="Enter search terms here" class="">
-					<input type="hidden" name="post_type" value="post">
+					<input type="hidden" name="" value="">
 					<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 					<button type="button" id="close-search">
 						<i class="fal fa-times"></i>

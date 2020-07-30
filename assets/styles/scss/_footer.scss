@@ -38,6 +38,11 @@
 			padding-bottom: 0.45em;
 		}
 		
+		i {
+			color: $brand-primary;
+			margin: 0 0.17em;
+		}
+		
 		a.button {
 			margin-top: 0.85em;
 		}
@@ -212,6 +217,12 @@ footer.footer {
 				    color: $white;
 				    font-size: rem-calc(30);
 				    margin-left: 0.4em;
+				    transition: color 0.3s ease;
+				    
+				&:hover {
+					color: $brand-primary-hover;
+				}
+				    
 			    }
 		    }
 		    

@@ -77,11 +77,23 @@ get_header(); ?>
 									<div class="grid-x grid-padding-x align-middle">	
 										
 										<div class="left cell small-12 medium-4">
-											<?php 
+											
+											<?php
+											if( get_sub_field('media_type') == 'image' ):					
 											$image = get_sub_field('image');
 											if( !empty( $image ) ): ?>
 											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-											<?php endif; ?>
+											<?php endif;
+											endif; ?>
+											
+											
+											<?php
+											if( get_sub_field('media_type') == 'video' ):?>
+											
+											<video width="100%" height="100%" src="<?php the_sub_field('video');?>" controls></video>
+											
+											<?php endif;?>
+											
 										</div>
 										
 										<div class="right cell small-12 medium-8 large-6">

@@ -1,23 +1,26 @@
 .blog {
+	
+	.content-header {
+		padding-bottom: 3.7em;		
+	}
 		
 	article {
 		margin-bottom: 3.3em;
-	}
-	
-	.break {
-		margin-top: 4.5em;
-	}
-	
-	.page-navigation {
-		margin-top: 0.4em;
-	    padding-bottom: 4.1em;
-	
-		ul.pagination {
-			text-align: right;
+		
+		.left {
+			@include breakpoint(medium) {
+				padding-right: 0;
+			}
+		}
+		
+		.right {
+			a:hover {
+				text-decoration: underline;
+			}
 		}
 		
 	}
-	
+		
 }
 
 .single-post {
@@ -30,7 +33,7 @@
 			
 			h3 {
 				margin: 0;
-				padding-bottom: 1em;
+				padding-bottom: 1em;				
 			}
 			
 			div {

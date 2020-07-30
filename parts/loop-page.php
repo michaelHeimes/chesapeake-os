@@ -11,7 +11,7 @@
 	</header> <!-- end article header -->
 					
     <section class="entry-content copy-wrap" itemprop="text">
-	    <?php the_content(); ?>
+	    <?php the_field('content'); ?>
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">

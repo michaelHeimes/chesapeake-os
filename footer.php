@@ -85,14 +85,21 @@
 								
 								<div class="copy"><?php the_content();?></div>
 								
-								<div class="author"><?php the_field('authors_name');?></div>
-
+								<div class="author"><?php the_field('authors_name_for_page_footer');?></div>
+								
 								<div class="stars text-center">
-									<?php if( get_field('star_count') == 'five' ):?>
-										<img src="/wp-content/themes/cos/assets/images/stars-5.svg"/>
+									<?php if( get_field('star_count') == '5' ):?>
+										<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+									<?php endif;?>
+									
+									<?php if( get_field('star_count') == '4' ):?>
+										<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+									<?php endif;?>
+									
+									<?php if( get_field('star_count') == '3' ):?>
+										<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 									<?php endif;?>
 								</div>
-
 								
 							</div>
 			
@@ -127,8 +134,8 @@
 								
 								<div class="break gray"></div>
 																
-								<h2 class="standard"><?php the_field('fr_sub-heading', 'option');?></h2>
-								<h1 class="standard"><?php the_field('fr_heading', 'option');?></h1>
+								<h2 class="standard"><?php the_field('fb_sub-heading', 'option');?></h2>
+								<h1 class="standard"><?php the_field('fb_heading', 'option');?></h1>
 								
 							</div>
 				

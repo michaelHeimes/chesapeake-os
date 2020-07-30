@@ -12,31 +12,42 @@ get_header(); ?>
 		<div class="grid-container">
 
 			<div class="inner-content grid-x grid-margin-x">
-		
-				<main class="main small-12 cell" role="main">
-					<header>
-						<h1 class="archive-title"><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
-					</header>
-	
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				 
-						<!-- To see additional archive styles, visit the /parts directory -->
-						<?php get_template_part( 'parts/loop', 'search' ); ?>
-					    
-					<?php endwhile; ?>	
-	
-						<?php joints_page_navi(); ?>
-						
-					<?php else : ?>
+				
+				<div class="lc-mw np cell small-0 large-4"></div>
+				
+				<div class="content-header cell small-12 large-8">
+
+					<h1 class="archive-title"><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
 					
-						<?php get_template_part( 'parts/content', 'missing' ); ?>
-							
-				    <?php endif; ?>
+				</div>
+								
+			</div>
 		
-			    </main> <!-- end #main -->
+			<div class="inner-content grid-x grid-margin-x">
+		
+				<div class="lc-mw np cell small-0 large-4"></div>
+				
+					<main class="main small-12 large-8 cell" role="main">
+	
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					 
+							<!-- To see additional archive styles, visit the /parts directory -->
+							<?php get_template_part( 'parts/loop', 'search' ); ?>
+						    
+						<?php endwhile; ?>	
+		
+							<?php joints_page_navi(); ?>
+							
+						<?php else : ?>
+						
+							<?php get_template_part( 'parts/content', 'missing' ); ?>
+								
+					    <?php endif; ?>
 			
-			    <?php get_sidebar(); ?>
-			
+				    </main> <!-- end #main -->
+					
+			</div>	
+						
 			</div> <!-- end #inner-content -->
 		
 		</div>

@@ -10,38 +10,40 @@
 get_header(); ?>
 			
 	<div class="content content-row">
+		<div class="grid-container">
 	
-		<div class="inner-content grid-x grid-padding-x">
-			
-			<div class="content-header cell small-12 medium-8 medium-offset-4">
+			<div class="inner-content grid-x grid-padding-x">
 				
-				<h1><?php the_field('heading', 'option');?></h1>
-				
-				<h2><?php the_field('sub-heading', 'option');?></h2>
-				
-			</div>
-	
-		    <main class="main small-12 cell" role="main">
-		    
-			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
-				<?php endwhile; ?>	
-
-					<?php joints_page_navi(); ?>
+				<div class="content-header cell small-12 medium-8 medium-offset-4">
 					
-				<?php else : ?>
-											
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
+					<h1><?php the_field('heading', 'option');?></h1>
+					
+					<h2><?php the_field('sub-heading', 'option');?></h2>
+					
+				</div>
+		
+			    <main class="main small-12 cell" role="main">
+			    
+				    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				 
+						<!-- To see additional archive styles, visit the /parts directory -->
+						<?php get_template_part( 'parts/loop', 'archive' ); ?>
+					    
+					<?php endwhile; ?>	
+	
+						<?php joints_page_navi(); ?>
 						
-				<?php endif; ?>
-																								
-		    </main> <!-- end #main -->
-		    
-		</div> <!-- end #inner-content -->
-
+					<?php else : ?>
+												
+						<?php get_template_part( 'parts/content', 'missing' ); ?>
+							
+					<?php endif; ?>
+																									
+			    </main> <!-- end #main -->
+			    
+			</div> <!-- end #inner-content -->
+			
+		</div>
 	</div> <!-- end #content -->
 	
 <?php get_footer(); ?>
