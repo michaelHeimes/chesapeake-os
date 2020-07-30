@@ -9,6 +9,10 @@ header.header {
 			padding-right: 0.7rem;
 		}
 		
+		.is-dropdown-submenu-parent a:after {
+			display: none !important;
+		}
+		
 		a.email-link:hover {
 			text-decoration: underline;
 		}
