@@ -260,12 +260,12 @@
 									
 									<div class="inner grid-x grid-margin-x grid-padding-x align-middle">
 										
-										<div class="source-org copyright cell small-12 mobile-shrink"><?php the_field('footer_copyright', 'option');?></div>
+										<div class="source-org copyright cell small-12 mobile-shrink">Copyright ©<?php echo date('Y');?> Chesapeake Oral Surgery & Dental Implants.</div>
 										
 										<div class="social-links cell small-12 mobile-shrink">
-											<a href="<?php the_field('facebook_url');?>"><i class="fab fa-facebook-square"></i></a>
-											<a href="<?php the_field('youtube_url');?>"><i class="fab fa-youtube"></i></a>
-											<a href="<?php the_field('yelp_url');?>"><i class="fab fa-yelp"></i></a>
+											<a href="<?php the_field('facebook_url', 'option');?>" target="_blank"><i class="fab fa-facebook-square"></i></a>
+											<a href="<?php the_field('youtube_url', 'option');?>" target="_blank"><i class="fab fa-youtube"></i></a>
+											<a href="<?php the_field('yelp_url', 'option');?>" target="_blank"><i class="fab fa-yelp"></i></a>
 										</div>
 										
 									</div>

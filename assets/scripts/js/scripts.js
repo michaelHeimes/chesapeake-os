@@ -30,7 +30,6 @@
 	});			
 
 	$(document).on('click', '.rating-wrap .wpcf7-list-item input', function(e){
-		e.preventDefault();
 		$(this).parent().addClass('clicked');
 		$(this).parent().prevAll().addClass('clicked');
 		$(this).parent().nextAll().removeClass('clicked');

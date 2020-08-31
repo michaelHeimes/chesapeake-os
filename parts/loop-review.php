@@ -30,7 +30,7 @@
 				
 				<div class="date"><?php $post_date = get_the_date( 'M j, Y' ); echo $post_date;?></div>
 								
-				<div class="author"><?php the_field('authors_name_for_reviews_page');?></div>
+				<div class="author"><?php the_field('authors_name_for_page_footer');?></div>
 
 				<div class="copy"><?php the_content();?></div>
 				

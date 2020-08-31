@@ -95,3 +95,16 @@ function joints_get_the_author_posts_link() {
 	);
 	return $link;
 }
+
+
+
+
+/**
+* WP Custom Excerpt Length Function
+* Place in functions.php
+* This example returns ten words, then [...]
+* Manual excerpts will override this
+*/function ld_custom_excerpt_length( $length ) {
+    return 26;
+}
+add_filter( 'excerpt_length', 'ld_custom_excerpt_length', 999 );

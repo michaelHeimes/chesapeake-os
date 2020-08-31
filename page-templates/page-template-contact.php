@@ -29,8 +29,7 @@ get_header(); ?>
 							</div>
 							
 							<div class="contact-links">
-								<div><a href ="tel:<?php the_field('contact_phone_number', 'option');?>"><i class="fas fa-phone"></i><?php the_field('contact_phone_number', 'option');?></a></div>
-								<div><a href="mailto:<?php the_field('contact_email_address', 'option');?>"><i class="far fa-envelope"></i><?php the_field('contact_email_address', 'option');?></a></div>
+								<div><a href ="tel:<?php the_field('contact_phone_number', 'option');?>"><i class="fas fa-mobile-alt"></i><i class="far fa-comment"></i><?php the_field('contact_phone_number', 'option');?></a></div>
 							</div>
 							
 							<div class="hours">
@@ -54,8 +53,8 @@ get_header(); ?>
 								
 								<div class="contact-directions"><?php the_sub_field('directions');?></div>
 								
-								<?php if( get_sub_field('directions_file_download') ): ?>
-								    <a class="button" href="<?php the_field('file'); ?>" download>Download Directions</a>
+								<?php if( $file = get_sub_field('directions_file_download') ): ?>
+								    <a class="button" href="<?php echo $file; ?>" download>Download Directions</a>
 								<?php endif; ?>
 							
 								<?php endwhile;?>
@@ -78,8 +77,8 @@ get_header(); ?>
 								
 								<div class="contact-directions"><?php the_sub_field('directions');?></div>
 								
-								<?php if( get_sub_field('directions_file_download') ): ?>
-								    <a class="button" href="<?php the_field('file'); ?>" download>Download Directions</a>
+								<?php if( $file = get_sub_field('directions_file_download') ): ?>
+								    <a class="button" href="<?php echo $file; ?>" download>Download Directions</a>
 								<?php endif; ?>
 							
 								<?php endwhile;?>
